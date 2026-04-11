@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
 
 function App() {
+  const [data, setData] = useState("");
+
+  const callAPI = async () => {
+    try {
+      const res = await fetch("https://backendrepo-one.vercel.app/api");
+      const json = await res.json();
+      setData(json.message);
+    } catch (err) {
+      console.error(err);
+      setData("Error fetching data");
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Full Stack App 🚀</h1>
+      <button onClick={callAPI}>Call Backend</button>
+      <p>{data}</p>
     </div>
   );
 }
