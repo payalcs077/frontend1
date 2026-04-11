@@ -16,8 +16,8 @@ function App() {
 
   return (
     <div>
-      <h1>Full Stack App 🚀</h1>
-      <button onClick={callAPI}>Call Backend</button>
+      <h1>Hello Cutie 👾</h1>
+      <button color="hotpink" onClick={callAPI}>Meow me</button>
       <p>{data}</p>
     </div>
   );
