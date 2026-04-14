@@ -5,7 +5,7 @@ function App() {
 
   const callAPI = async () => {
     try {
-      const res = await fetch("https://backendrepo-one.vercel.app/api");
+      const res = await fetch("https://mycuteapp.duckdns.org/api")
       const json = await res.json();
       setData(json.message);
     } catch (err) {
